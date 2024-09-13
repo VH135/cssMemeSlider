@@ -1,9 +1,225 @@
+/* reset styles start */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* reset styles end */
+
+/* global styles start */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  background: #212121;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400;
+  font-size: 125%;
+  line-height: 130%;
+  font-style: normal;
+  color: #FFF;
+}
+
 body {
   background-color: grey;
 }
+
+/* global styles end */
+
+input {
+  display: none;
+}
+
+/* container and slider styles start */
+
+.container {
+  position: relative;
+  max-width: 70vh;
+  width: 80%;
+  margin: 10em auto;
+  overflow: hidden;
+  border: 1px solid greenyellow;
+}
+
+.slider {
+  display: flex;
+  width: calc(400%);
+  -gap: 1em;
+  transition: .5s;
+  border: 1px solid red;
+}
+
+.slide {
+  width: calc((100%) / 4);
+  scroll-snap-align: start;
+  border: 1px solid #000;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
+
+/* container and slider styles end */
+
+/* texts and buttons styles start */
+
+.texts-buttons-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 5%;
+}
+
+.meme-texts {
+  margin-top: 0.5rem;
+}
+
+.meme-text {
+  height: 0;
+  opacity: 0;
+  transition: opacity 1s;
+  visibility: hidden;
+}
+
+.controls-buttons {
+  display: flex;
+}
+
+.slider-button {
+  width: 3em;
+  height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.control-button {
+  display: block;
+  width: 1em;
+  height: 1em;
+  border: 0.1em solid #000;
+  border-radius: 50%;
+  background-color: #2D9CDB;
+  transition: .2s;
+}
+
+.controls>#radio-btn1:checked~.texts-buttons-wrapper>.meme-texts>#meme-text1,
+.controls>#radio-btn2:checked~.texts-buttons-wrapper>.meme-texts>#meme-text2,
+.controls>#radio-btn3:checked~.texts-buttons-wrapper>.meme-texts>#meme-text3,
+.controls>#radio-btn4:checked~.texts-buttons-wrapper>.meme-texts>#meme-text4 {
+  visibility: visible;
+  height: auto;
+  opacity: 1;
+}
+
+#radio-btn1:checked~.slider {
+  transform: translateX(0);
+}
+
+#radio-btn2:checked~.slider {
+  transform: translateX(calc(-12.5% * 1 - 1rem / 4));
+}
+
+
+.controls>#radio-btn1:checked~.controls-buttons>.slider-button>#slider-btn1>span,
+#slide2:checked~.text-buttons>.buttons>#btn2>span,
+#slide3:checked~.text-buttons>.buttons>#btn3>span,
+#slide4:checked~.text-buttons>.buttons>#btn4>span,
+#slide5:checked~.text-buttons>.buttons>#btn5>span,
+#slide6:checked~.text-buttons>.buttons>#btn6>span,
+#slide7:checked~.text-buttons>.buttons>#btn7>span,
+#slide8:checked~.text-buttons>.buttons>#btn8>span {
+  border: solid 2rem red;
+  background-color: transparent;
+}
+
+/* texts and buttons styles end */
