@@ -127,8 +127,6 @@ input {
 
 .slide {
   width: 25%;
-  -scroll-snap-align: start;
-  -border: 1px solid #000;
 }
 
 .slide img {
@@ -143,22 +141,6 @@ input {
 .texts-buttons-wrapper {
   display: flex;
   justify-content: space-between;
-  -gap: 5%;
-}
-
-.meme-texts {
-  -margin-top: 2em;
-}
-
-#meme-text1,
-#meme-text2,
-#meme-text3,
-#meme-text4 {
-  -height: 0;
-  -opacity: 0;
-  transition: opacity 1s;
-  visibility: hidden;
-  color: aliceblue;
 }
 
 .controls-buttons {
@@ -177,38 +159,37 @@ input {
   display: block;
   width: 1em;
   height: 1em;
-  -border: solid #000;
   border-radius: 50%;
   background-color: orange;
   transition: .2s;
 }
 
+/* texts and buttons styles end */
+
+#meme-text1,
+#meme-text2,
+#meme-text3,
+#meme-text4 {
+  transition: opacity 1s;
+  visibility: hidden;
+  color: aliceblue;
+}
+
+
 #radio-btn1:checked~.texts-buttons-wrapper #meme-text1 {
   visibility: visible;
-  -height: auto;
-  -opacity: 1;
-
 }
 
 #radio-btn2:checked~.texts-buttons-wrapper #meme-text2 {
   visibility: visible;
-  -height: auto;
-  -opacity: 1;
-
 }
 
 #radio-btn3:checked~.texts-buttons-wrapper #meme-text3 {
   visibility: visible;
-  -height: auto;
-  -opacity: 1;
-
 }
 
 #radio-btn4:checked~.texts-buttons-wrapper #meme-text4 {
   visibility: visible;
-  -height: auto;
-  -opacity: 1;
-
 }
 
 
