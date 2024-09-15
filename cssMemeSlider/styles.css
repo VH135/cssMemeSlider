@@ -107,6 +107,10 @@ input {
   display: none;
 }
 
+label {
+  cursor: pointer;
+}
+
 /* global styles end */
 
 
@@ -140,19 +144,22 @@ input {
 
 .texts-buttons-wrapper {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
 
 .controls-buttons {
   display: flex;
+  justify-content: end;
 }
 
 .slider-button {
-  width: 2em;
-  height: 2em;
+  width: 3em;
+  height: 3em;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 1.5em;
 }
 
 .control-button {
@@ -164,15 +171,28 @@ input {
   transition: .2s;
 }
 
+.control-button:hover {
+  background-color: blanchedalmond;
+}
+
+.control-button:active {
+  background-color: green;
+}
+
 /* texts and buttons styles end */
 
 #meme-text1,
 #meme-text2,
 #meme-text3,
 #meme-text4 {
-  transition: opacity 1s;
+  transition: ease 0.2s;
   visibility: hidden;
   color: aliceblue;
+  font-size: 2em;
+}
+
+.slider .slide {
+  transition: all 0.7s ease;
 }
 
 
@@ -207,10 +227,6 @@ input {
 
 #radio-btn4:checked~.slider #slide4 {
   margin-left: -75%;
-}
-
-.slider .slide {
-  transition: all 0.7s ease;
 }
 
 /* texts and buttons styles end */
