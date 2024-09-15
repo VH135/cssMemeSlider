@@ -99,49 +99,36 @@ video {
   box-sizing: border-box;
 }
 
-html {
-  background: #212121;
-  font-family: 'Helvetica', 'Arial', sans-serif;
-  font-weight: 400;
-  font-size: 125%;
-  line-height: 130%;
-  font-style: normal;
-  color: #FFF;
-}
-
 body {
-  background-color: grey;
+  background-color: #000;
 }
-
-/* global styles end */
 
 input {
   display: none;
 }
 
+/* global styles end */
+
+
 /* container and slider styles start */
 
 .container {
   position: relative;
+  width: 60%;
   max-width: 70vh;
-  width: 80%;
-  margin: 10em auto;
+  margin: 5% auto;
   overflow: hidden;
-  border: 1px solid greenyellow;
 }
 
 .slider {
+  width: 400%;
   display: flex;
-  width: calc(400%);
-  -gap: 1em;
-  transition: .5s;
-  border: 1px solid red;
 }
 
 .slide {
-  width: calc((100%) / 4);
-  scroll-snap-align: start;
-  border: 1px solid #000;
+  width: 25%;
+  -scroll-snap-align: start;
+  -border: 1px solid #000;
 }
 
 .slide img {
@@ -156,18 +143,22 @@ input {
 .texts-buttons-wrapper {
   display: flex;
   justify-content: space-between;
-  gap: 5%;
+  -gap: 5%;
 }
 
 .meme-texts {
-  margin-top: 0.5rem;
+  -margin-top: 2em;
 }
 
-.meme-text {
-  height: 0;
-  opacity: 0;
+#meme-text1,
+#meme-text2,
+#meme-text3,
+#meme-text4 {
+  -height: 0;
+  -opacity: 0;
   transition: opacity 1s;
   visibility: hidden;
+  color: aliceblue;
 }
 
 .controls-buttons {
@@ -175,8 +166,8 @@ input {
 }
 
 .slider-button {
-  width: 3em;
-  height: 3em;
+  width: 2em;
+  height: 2em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -186,40 +177,59 @@ input {
   display: block;
   width: 1em;
   height: 1em;
-  border: 0.1em solid #000;
+  -border: solid #000;
   border-radius: 50%;
-  background-color: #2D9CDB;
+  background-color: orange;
   transition: .2s;
 }
 
-.controls>#radio-btn1:checked~.texts-buttons-wrapper>.meme-texts>#meme-text1,
-.controls>#radio-btn2:checked~.texts-buttons-wrapper>.meme-texts>#meme-text2,
-.controls>#radio-btn3:checked~.texts-buttons-wrapper>.meme-texts>#meme-text3,
-.controls>#radio-btn4:checked~.texts-buttons-wrapper>.meme-texts>#meme-text4 {
+#radio-btn1:checked~.texts-buttons-wrapper #meme-text1 {
   visibility: visible;
-  height: auto;
-  opacity: 1;
+  -height: auto;
+  -opacity: 1;
+
 }
 
-#radio-btn1:checked~.slider {
-  transform: translateX(0);
+#radio-btn2:checked~.texts-buttons-wrapper #meme-text2 {
+  visibility: visible;
+  -height: auto;
+  -opacity: 1;
+
 }
 
-#radio-btn2:checked~.slider {
-  transform: translateX(calc(-12.5% * 1 - 1rem / 4));
+#radio-btn3:checked~.texts-buttons-wrapper #meme-text3 {
+  visibility: visible;
+  -height: auto;
+  -opacity: 1;
+
+}
+
+#radio-btn4:checked~.texts-buttons-wrapper #meme-text4 {
+  visibility: visible;
+  -height: auto;
+  -opacity: 1;
+
 }
 
 
-.controls>#radio-btn1:checked~.controls-buttons>.slider-button>#slider-btn1>span,
-#slide2:checked~.text-buttons>.buttons>#btn2>span,
-#slide3:checked~.text-buttons>.buttons>#btn3>span,
-#slide4:checked~.text-buttons>.buttons>#btn4>span,
-#slide5:checked~.text-buttons>.buttons>#btn5>span,
-#slide6:checked~.text-buttons>.buttons>#btn6>span,
-#slide7:checked~.text-buttons>.buttons>#btn7>span,
-#slide8:checked~.text-buttons>.buttons>#btn8>span {
-  border: solid 2rem red;
-  background-color: transparent;
+#radio-btn1:checked~.slider #slide1 {
+  margin-left: 0%;
+}
+
+#radio-btn2:checked~.slider #slide2 {
+  margin-left: -25%;
+}
+
+#radio-btn3:checked~.slider #slide3 {
+  margin-left: -50%;
+}
+
+#radio-btn4:checked~.slider #slide4 {
+  margin-left: -75%;
+}
+
+.slider .slide {
+  transition: all 0.7s ease;
 }
 
 /* texts and buttons styles end */
