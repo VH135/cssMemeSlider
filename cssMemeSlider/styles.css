@@ -1,0 +1,232 @@
+/* reset styles start */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* reset styles end */
+
+/* global styles start */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+}
+
+input {
+  display: none;
+}
+
+label {
+  cursor: pointer;
+}
+
+/* global styles end */
+
+
+/* container and slider styles start */
+
+.container {
+  position: relative;
+  width: 60%;
+  max-width: 70vh;
+  margin: 5% auto;
+  overflow: hidden;
+}
+
+.slider {
+  width: 400%;
+  display: flex;
+}
+
+.slide {
+  width: 25%;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
+
+/* container and slider styles end */
+
+/* texts and buttons styles start */
+
+.texts-buttons-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.controls-buttons {
+  display: flex;
+  justify-content: end;
+}
+
+.slider-button {
+  width: 3em;
+  height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5em;
+}
+
+.control-button {
+  display: block;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background-color: orange;
+  transition: .2s;
+}
+
+.control-button:hover {
+  background-color: blanchedalmond;
+}
+
+.control-button:active {
+  background-color: green;
+}
+
+/* texts and buttons styles end */
+
+#meme-text1,
+#meme-text2,
+#meme-text3,
+#meme-text4 {
+  transition: ease 0.2s;
+  visibility: hidden;
+  color: aliceblue;
+  font-size: 2em;
+}
+
+.slider .slide {
+  transition: all 0.7s ease;
+}
+
+
+#radio-btn1:checked~.texts-buttons-wrapper #meme-text1 {
+  visibility: visible;
+}
+
+#radio-btn2:checked~.texts-buttons-wrapper #meme-text2 {
+  visibility: visible;
+}
+
+#radio-btn3:checked~.texts-buttons-wrapper #meme-text3 {
+  visibility: visible;
+}
+
+#radio-btn4:checked~.texts-buttons-wrapper #meme-text4 {
+  visibility: visible;
+}
+
+
+#radio-btn1:checked~.slider #slide1 {
+  margin-left: 0%;
+}
+
+#radio-btn2:checked~.slider #slide2 {
+  margin-left: -25%;
+}
+
+#radio-btn3:checked~.slider #slide3 {
+  margin-left: -50%;
+}
+
+#radio-btn4:checked~.slider #slide4 {
+  margin-left: -75%;
+}
+
+/* texts and buttons styles end */
